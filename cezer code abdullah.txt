@@ -1,0 +1,25 @@
+#coding part of the program
+import string
+arr=string.ascii_letters
+print("caeser cod")
+message=input("please enter Encryption message :") #the message
+key=input('please enter key 0 into 9 :') #the amount of shift
+blank=""
+
+for item in message:
+    if item.isalpha():
+        blank+=arr[(arr.index(item)+int(key))%26] #the %26 is used to reset the alphabet when the amount of shift exceeds the number of letters
+    else :
+       blank+=item
+print(blank)
+####################################################################################
+#the decoding part of the program
+message2=input("please enter Decryption message :") #the encrypted mesage
+key2=input('please enter key 0 into 9 :')#the shift of the code
+blank2=""
+for item in message2:
+    if item.isalpha():
+        blank2+=arr[(arr.index(item)-int(key2))%26]
+    else :
+       blank2+=item
+print(blank2)
